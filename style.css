@@ -209,6 +209,7 @@ img {
   flex-direction: column;
   margin-top: 0;
   height: auto;
+  padding-bottom: 0.4rem;
 }
 
 .timeline-card::before {
@@ -295,7 +296,7 @@ img {
 .timeline-card img {
   width: calc(100% - 1.8rem);
   height: 180px;
-  margin: 0.35rem auto 0;
+  margin: 0.9rem auto 0;
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
@@ -313,7 +314,7 @@ img {
 }
 
 .timeline-card h3 {
-  margin: 0.75rem 1.1rem 0.1rem;
+  margin: 0.6rem 1.1rem 0.05rem;
   font-size: 1.35rem;
   line-height: 1.25;
   font-weight: 600;
@@ -324,19 +325,16 @@ img {
 
 .timeline-card p {
   position: absolute;
-  top: 3.8rem;
-  left: 50%;
-  width: calc(100% - 1.2rem);
-  height: 200px;
+  inset: 0;
   margin: 0;
-  padding: 0.9rem 0.95rem;
+  padding: 1.2rem 1.1rem;
   color: rgba(255, 255, 255, 0);
   background: rgba(13, 27, 42, 0);
-  border-radius: 16px;
+  border-radius: 20px;
   font-size: 0.92rem;
   line-height: 1.5;
   opacity: 0;
-  transform: translateX(-50%) translateY(18px);
+  transform: translateY(18px);
   transition: opacity 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.35s ease;
   pointer-events: none;
   z-index: 3;
@@ -349,9 +347,9 @@ img {
 
 .timeline-card:hover p {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
   color: rgba(255, 255, 255, 1);
-  background: linear-gradient(135deg, rgba(22, 114, 190, 0.92), rgba(88, 157, 225, 0.92));
+  background: linear-gradient(135deg, rgba(18, 96, 160, 0.92), rgba(57, 135, 214, 0.92));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
