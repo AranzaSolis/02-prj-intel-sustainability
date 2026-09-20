@@ -1,1 +1,306 @@
-/* Add your CSS here */
+:root {
+  --intel-blue: #0071c5;
+  --intel-blue-dark: #004d8f;
+  --intel-cyan: #00a3ff;
+  --intel-navy: #0d1b2a;
+  --intel-slate: #1a2738;
+  --intel-light: #f3f7fb;
+  --intel-panel: rgba(12, 24, 38, 0.9);
+  --intel-border: rgba(255, 255, 255, 0.12);
+  --intel-text: #eaf3ff;
+  --intel-muted: #c8d5e4;
+  --intel-shadow: 0 20px 45px rgba(2, 20, 38, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #0d1b2a;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+.timeline-kicker,
+.section-label,
+.event-year {
+  font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.content-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1672be 0%, #589de1 38%, #1672be 100%);
+  border-bottom: 1px solid rgba(0, 113, 197, 0.12);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+.brand-header-bar {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 1.25rem 1rem 0.5rem;
+  border-bottom: 1px solid rgba(0, 113, 197, 0.08);
+}
+
+.intel-brand-logo {
+  display: block;
+  width: 170px;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 163, 255, 0.15));
+}
+
+.hero-section {
+  padding: 2.5rem 0 2.5rem;
+}
+
+.page-heading-group {
+  text-align: center;
+}
+
+.section-label {
+  margin: 0 0 0.45rem;
+  color: var(--intel-cyan);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+}
+
+.page-heading-group h1,
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hero-description {
+  margin: 0 auto;
+  max-width: 760px;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 1.06rem;
+}
+
+.sustainability-story {
+  padding: 4rem 0 2rem;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-kicker {
+  margin: 0 0 0.5rem;
+  color: var(--intel-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.timeline-header h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  letter-spacing: -0.04em;
+  color: #0d1b2a;
+}
+
+.timeline-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 1.25rem 1.25rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline-event {
+  position: relative;
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+}
+
+.timeline-event::before {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00a3ff, #0071c5);
+  border: 4px solid rgba(11, 21, 34, 0.95);
+  box-shadow: 0 0 0 6px rgba(0, 163, 255, 0.18);
+  z-index: 2;
+}
+
+.timeline-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+  border: 1px solid rgba(0, 113, 197, 0.14);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(52, 89, 126, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 163, 255, 0.7);
+  box-shadow: 0 25px 55px rgba(0, 163, 255, 0.18);
+}
+
+.event-year {
+  display: inline-block;
+  margin: 0.75rem 1rem 0;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(0, 163, 255, 0.12);
+  border: 1px solid rgba(0, 163, 255, 0.35);
+  color: #0d6ecb;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.timeline-card img {
+  width: calc(100% - 1.8rem);
+  height: 180px;
+  margin: 0.65rem auto 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, filter 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-card:hover img {
+  transform: scale(1.02);
+  filter: saturate(1.08);
+}
+
+.timeline-card h3 {
+  margin: 0.7rem 1.1rem 0.15rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: #0d1b2a;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-card p {
+  position: absolute;
+  top: 3.8rem;
+  left: 50%;
+  width: calc(100% - 1.2rem);
+  height: 200px;
+  margin: 0;
+  padding: 0.9rem 0.95rem;
+  color: rgba(255, 255, 255, 0);
+  background: rgba(13, 27, 42, 0);
+  border-radius: 16px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateX(-50%) translateY(18px);
+  transition: opacity 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+  pointer-events: none;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.timeline-card:hover p {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(135deg, rgba(22, 114, 190, 0.92), rgba(88, 157, 225, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.timeline-instruction {
+  margin: 0;
+  padding: 1rem 1rem 2.5rem;
+  text-align: center;
+  color: #34516f;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .hero-section {
+    padding-top: 2rem;
+  }
+
+  .brand-header-bar {
+    padding-top: 1rem;
+  }
+
+  .intel-brand-logo {
+    width: 140px;
+  }
+
+  .timeline-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: visible;
+    gap: 1.25rem;
+    padding-left: 0;
+  }
+
+  .timeline-event {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .timeline-event::before {
+    left: 18px;
+    transform: none;
+  }
+
+  .timeline-card img {
+    height: 200px;
+  }
+}
